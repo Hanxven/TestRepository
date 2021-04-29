@@ -1,0 +1,68 @@
+function mainJs1(a) {
+    a = a.replace(',', '\n');
+    
+	pattern = /js\n.*/
+
+    return pattern.test(a).toString();
+}
+
+function mainJs2(a) {
+	pattern1 = /[a-zA-Z][0-9]/
+    pattern2 = /A[^0-9]/
+    return pattern1.test(a).toString() + "," +pattern2.test(a).toString();
+}
+
+function mainJs3(a) {
+    pattern1 = /\?+/
+    pattern2 = /\+{3}/
+    pattern3 = /(\{\}){1,2}/
+    pattern4 = /\\?/
+
+    return pattern1.test(a).toString() +
+    "," + pattern2.test(a).toString() +
+    "," + pattern3.test(a).toString() + 
+    "," + pattern4.test(a).toString();
+}
+
+function mainJs4(a) {
+    pattern1 = /[0-9]{17}[0-9Xx]/
+    pattern2 = /(23|24)[0-9]{4}/
+    pattern3 = /0(10|2[0-57-9])/
+
+    return pattern1.test(a).toString() +
+    "," + pattern2.test(a).toString() +
+    "," + pattern3.test(a).toString();
+}
+
+function mainJs5(a) {
+    pattern1 = /(\?\+){2,}/
+    pattern2 = /[0-9](\?|\+)[0-9]/
+
+    return pattern1.test(a).toString() +
+    "," + pattern2.test(a).toString();
+}
+
+function mainJs6(a) {
+    pattern1 = /([0-9]{3})[^0-9]\1/
+    pattern2 = /[A-Z]([0-9])[A-Z]\1[A-Z]\1/
+
+    return pattern1.test(a).toString() +
+    "," + pattern2.test(a).toString();
+}
+
+function mainJs7(a) {
+    pattern = /^(js)\b/
+
+    return pattern.test(a).toString();
+}
+
+function mainJs8(a) {
+    pattern = /\bshell\b/ig
+    return a.match(pattern);
+}
+
+function mainJs9(a) {
+    pattern = /([a-zA-Z]+:)([0-9]{1,3})(,)/g
+    a = a.replace(pattern, '$1$3');
+    return a;
+}
